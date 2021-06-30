@@ -91,7 +91,7 @@ router.post('/movies/:id/edit', (req,res,next) => {
 
     MovieModel.findByIdAndUpdate(id, {title, genre, plot, cast})
     .then(() => {
-        res.redirect('/movies', id)
+        res.redirect('/movies')
     })
     .catch((err) => {
         next(err)
